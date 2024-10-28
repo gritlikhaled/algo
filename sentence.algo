@@ -1,0 +1,42 @@
+ALGORITHM sentence
+VAR
+    sen: STRING;
+    
+    char: CHAR;
+    
+    cptChar, cptW, cptV: INTEGER;
+    
+BEGIN
+// initalize
+    cptChar := 0; 
+    cptW := 0;
+    cptV := 0;
+    char := sen[0];
+    Write("Put your sentence");
+    Read(sen);
+// process    
+    WHILE char <> '.' DO
+        cptChar := cptChar++; //count characters
+        IF char = ' ' THEN
+            cptW := cptW ++; //count words
+        END_IF
+        
+        IF (char = 'a') OR (char = 'e') OR (char = 'i') OR (char = 'o') OR (char = 'u') OR (char = 'A') OR (char = 'E') OR (char = 'I') OR (char = 'O') OR (char = 'U')  THEN
+            cptV := cptV ++; //count vowels
+        END_IF
+        char := sen[cptChar] ;
+    END_WHILE
+// outputs
+    Write("Number of characters: ", cptChar++);
+    Write("Number of words: ", cptW++);
+    Write("Number of vowels: ", cptV++);
+END
+
+
+
+
+
+
+
+
+
